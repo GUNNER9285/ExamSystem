@@ -3,7 +3,7 @@
 @section('content')
     <div class="jumbotron">
         <h3 class="display-4">Login</h3>
-        <form class="form-group">
+        <form class="form-group" method="POST" action="{{URL::to('/')}}">
             <div class="form-group row">
                 <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
@@ -32,6 +32,7 @@
                 </div>
             </div>
 
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group row mb-0">
                 <div class="col-md-8 offset-md-4">
                     <button type="submit" class="btn btn-primary">

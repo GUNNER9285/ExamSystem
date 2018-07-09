@@ -15,4 +15,19 @@ Route::get('/', function () {
     return view('index');
 });
 
+#-----------------------------------------
+##       User Controller
+#-----------------------------------------
+Route::post('/', 'UserController@login');
+
 Route::get('/register', 'UserController@register');
+Route::post('/register', 'UserController@save');
+
+Route::get('/logout', 'UserController@logout');
+
+#-----------------------------------------
+##       Exam Controller
+#-----------------------------------------
+Route::middleware('auth')->group(function () {
+    Route::get('/exam', 'ExamController@show');
+});
