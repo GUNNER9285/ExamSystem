@@ -30,4 +30,7 @@ Route::get('/logout', 'UserController@logout');
 #-----------------------------------------
 Route::middleware('auth')->group(function () {
     Route::get('/exam', 'ExamController@show');
+
+    Route::get('/exam/{id}', 'ExamController@info');
+    Route::post('/exam/{id}', 'ExamController@submit');
 });
