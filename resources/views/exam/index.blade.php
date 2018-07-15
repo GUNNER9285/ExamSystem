@@ -13,7 +13,11 @@
             </div>
             <div class="card-body">
                 <a href="{{URL::to('/exam/'.$exam['id'])}}" class="btn btn-primary">ไปทำข้อสอบ</a>
-                <span class="badge badge-success">ทำสำเร็จ</span>
+                @if($score[$exam['id']-1]['status'] == 0)
+                    <span class="badge badge-danger">ยังทำไม่สำเร็จ</span>
+                @else
+                    <span class="badge badge-success">ทำสำเร็จ</span>
+                @endif
             </div>
         </div>
     @endforeach

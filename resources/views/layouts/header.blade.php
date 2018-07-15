@@ -5,8 +5,8 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a class="navbar-brand" href="{{URL::to('/exam')}}">ข้อสอบ</a>
         <div class="nav justify-content-end">
-            <span style="color: #ffffff;"> {{$user[0]['username']}} :</span>
-            <span style="color: #ffffff;">&nbsp;{{$user[0]['score']}} คะแนน</span>
+            <span style="color: #ffffff;"> {{$user['username']}} :</span>
+            <span style="color: #ffffff;">&nbsp;{{$user['score']}} คะแนน</span>
         </div>
     </div>
 </nav>
